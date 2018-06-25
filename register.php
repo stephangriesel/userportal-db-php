@@ -7,6 +7,9 @@ if (isset($_POST["u_btn"])) {
     $u_pass = $_POST["u_pass"];
     if (empty($u_name) || empty($u_email) || empty ($u_pass) ) {
         echo "Please complete all fields";
+    } else {
+        $insert = mysqli_query($conn,"INSERT INTO `test` (`u_name`, `u_email`, `u_pass`) VALUES ('$u_name', '$u_email', '$u_pass')");
+        echo "Success";
     }
 }
 
